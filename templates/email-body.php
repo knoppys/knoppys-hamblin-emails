@@ -37,6 +37,42 @@ function candidate_application($jobTitle){ ob_start(); ?>
 return $content;
 };
 
+function candidate_notification($jobRef, $jobTitle, $name, $lastname, $bday, $telephone, $email){ ob_start(); ?>
+
+	<div style="background-color:#E3E8E5;">
+		<div class="block-grid" style="Margin: 0 auto;min-width: 320px;max-width: 600px;width: 600px;width: calc(29000% - 179200px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #FFFFFF;">
+			<div style="border-collapse: collapse;display: table;width: 100%;">
+				<!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#E3E8E5;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 600px;"><tr class="layout-full-width" style="background-color:#FFFFFF;"><![endif]-->
+				<!--[if (mso)|(IE)]><td align="center" width="600" style=" width:600px; padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+				<div class="col num12" style="min-width: 320px;max-width: 600px;width: 600px;width: calc(28000% - 167400px);background-color: #FFFFFF;">
+					<div style="background-color: transparent; width: 100% !important;">
+						<!--[if (!mso)&(!IE)]><!-->
+						<div style="border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent; padding-top:0px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
+							<!--<![endif]-->
+							<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 30px; padding-left: 30px; padding-top: 30px; padding-bottom: 5px;"><![endif]-->
+							<div style="font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;color:#555555;line-height:150%; padding-right: 30px; padding-left: 30px; padding-top: 30px; padding-bottom: 5px;">
+								<div style="font-size:12px;line-height:18px;color:#555555;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
+									<p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 24px; line-height: 36px;"><strong><span style="line-height: 36px; font-size: 24px;"><span style="line-height: 36px; font-size: 24px;">Hamblin Recruitment Online Vacancy application<br></span></span></strong></span></p>
+									<p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 18px; line-height: 27px;">Vacancy reference: <?php echo $jobRef; ?></span></p>
+									<p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 18px; line-height: 27px;">Vacancy job title: <?php echo $jobTitle; ?></span></p>
+									<p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 18px; line-height: 27px;">Applicant name: <?php echo $name; ?> <?php echo $lastname; ?></span></p>
+									<p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 18px; line-height: 27px;">Applicant DoB: <?php echo $bday; ?></span></p>
+									<p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 18px; line-height: 27px;">Applicant Telephone: <?php echo $telephone; ?></span></p>
+									<p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 18px; line-height: 27px;">Applicant Email: <?php echo $email; ?></span></p>									
+								</div>
+							</div><!--[if mso]></td></tr></table><![endif]-->
+							<!--[if (!mso)&(!IE)]><!-->
+						</div><!--<![endif]-->
+					</div>
+				</div><!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+			</div>
+		</div>
+	</div>
+
+<?php $content = ob_get_clean();
+return $content;
+};
+
 function candidate_registration($to, $telephone, $name, $lastname, $dob, $permit, $basedon, $Executive, $Temporary, $Interim, $Permanent, $discipline, $criminal, $quickmessage, $add1, $add2, $add3, $town, $postcode, $datasaved, $jobalerts, $jobRef){ ob_start(); ?>
 
 	<div style="background-color:#E3E8E5;">

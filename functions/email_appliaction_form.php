@@ -53,18 +53,22 @@ function processform() {
   $messageCandidate .= candidate_application($jobTitle);
   $messageCandidate .= reason_jobapplication();
   $messageCandidate .= email_footer();
+  $headers[] = 'Content-Type: text/html; charset=UTF-8';
+  $headers[] = 'From: Hamblin Employment Group <info@hamblin.co.im>';
+  $mailCandidate = wp_mail($to, 'Application Successful', $messageCandidate, $headers );
 
   //Build the message to the head office
   $messageOffice = new_candidate_application($to, $jobTitle, $telephone, $name, $lastname, $bday, $permit, $basedon, $Executive, $Temporary, $Interim, $Permanent, $discipline, $criminal, $quickmessage, $add1, $add2, $add3, $town, $postcode, $datasaved, $jobalerts, $jobRef, $job_id, $noofhours );
-  
-  $headers[] = 'Content-Type: text/html; charset=UTF-8';
-  $headers[] = 'From: Hamblin Employment Group <info@hamblin.co.im>';
-
   $officeheaders[] = 'Content-Type: text/plain; charset=UTF-8';
   $officeheaders[] = 'From: Hamblin Website <no-reply@hamblin.co.im>';
+  $mailTroy = wp_mail('webmail@hamblin.co.im', 'Posting From Troy', $messageOffice, $officeheaders, array($attachments) );
 
-  $mailCandidate = wp_mail($to, 'Application Successful', $messageCandidate, $headers );
-  $mailoffice = wp_mail($admin_email, 'Posting From Troy', $messageOffice, $officeheaders, array($attachments) );
+  //Build the messae to the office for notification
+  $messageNotification = email_header();
+  $messageNotification .= candidate_notification($jobRef, $jobTitle, $name, $lastname, $bday, $telephone, $email);
+  $messageNotification .= email_footer();
+  $mailOffice = wp_mail($admin_email, 'New Application', $messageNotification, $headers);
+  
 
   /**********************************
   IF THE USER IS A NEW USER and they have said we can save their data

@@ -30,7 +30,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
 <troynote><?php echo $quickmessage; ?></troynote>
 </personal>
 <troyjoblist>
-<troyjobid><?php echo $job_id; ?></troyjobid>		         
+<troyjobid><?php echo $jobRef; ?></troyjobid>		         
 </troyjoblist>
 <skillrollup>
 <canonskill name="WORK PERMIT" code="N" group="02" leveldescription="" levelcode=""><?php echo $permit; ?></canonskill> 
