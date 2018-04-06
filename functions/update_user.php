@@ -44,23 +44,28 @@ function processuserform() {
 
   $admin_email = get_option( 'admin_email' );
 
+  //Creat the headers for HTML Emails
+  $headers[] = 'Content-Type: text/html; charset=UTF-8';
+  $headers[] = 'From: Hamblin Employment Group <info@hamblin.co.im>';
+
   //Build the message to the candidate
   $messageCandidate = email_header();
   $messageCandidate .= new_user_registration($name, $to, $password);
   $messageCandidate .= reason_newuser();
   $messageCandidate .= email_footer();
+  $mailCandidate = wp_mail($to, 'Application Successful', $messageCandidate, $headers );
 
   //Build the message to the head office
   $messageOffice = email_header();
   $messageOffice .= candidate_registration($to, $telephone, $name, $lastname, $bday, $permit, $basedon, $Executive, $Temporary, $Interim, $Permanent, $discipline, $criminal, $quickmessage, $add1, $add2, $add3, $town, $postcode, $datasaved, $jobalerts, $jobRef );  
   $messageOffice .= email_footer();
-
-
-  $headers[] = 'Content-Type: text/html; charset=UTF-8';
-  $headers[] = 'From: Hamblin Employment Group <info@hamblin.co.im>';
-
-  $mailCandidate = wp_mail($to, 'Application Successful', $messageCandidate, $headers );
   $mailoffice = wp_mail($admin_email, 'New Candidate Registration', $messageOffice, $headers, array($attachments) );
+
+  //Built the new user registration message for TROY
+  $newregistrationmessage = troy_candidate_registration($to, $jobTitle, $telephone, $name, $lastname, $bday, $permit, $basedon, $Executive, $Temporary, $Interim, $Permanent, $discipline, $criminal, $quickmessage, $add1, $add2, $add3, $town, $postcode, $datasaved, $jobalerts, $jobRef, $job_id, $noofhours );
+  $officeheaders[] = 'Content-Type: text/plain; charset=UTF-8';
+  $officeheaders[] = 'From: Hamblin Website <no-reply@hamblin.co.im>';
+  $troy_candidate_registration = wp_mail('webmail@hamblin.co.im', 'Posting From Troy', $newregistrationmessage, $officeheaders, array($attachments) );
 
   /**********************************
   IF THE USER IS A NEW USER and they have said we can save their data
