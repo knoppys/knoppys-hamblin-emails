@@ -57,18 +57,23 @@ function processform() {
   $headers[] = 'From: Hamblin Employment Group <info@hamblin.co.im>';
   $mailCandidate = wp_mail($to, 'Application Successful', $messageCandidate, $headers );
 
-  //Build the message to the head office
-  $messageOffice = new_candidate_application($to, $jobTitle, $telephone, $name, $lastname, $bday, $permit, $basedon, $Executive, $Temporary, $Interim, $Permanent, $discipline, $criminal, $quickmessage, $add1, $add2, $add3, $town, $postcode, $datasaved, $jobalerts, $jobRef, $job_id, $noofhours );
+  //Build the new job application message for TROY
+  $newapplicationmessage = new_candidate_application($to, $jobTitle, $telephone, $name, $lastname, $bday, $permit, $basedon, $Executive, $Temporary, $Interim, $Permanent, $discipline, $criminal, $quickmessage, $add1, $add2, $add3, $town, $postcode, $datasaved, $jobalerts, $jobRef, $job_id, $noofhours );
   $officeheaders[] = 'Content-Type: text/plain; charset=UTF-8';
   $officeheaders[] = 'From: Hamblin Website <no-reply@hamblin.co.im>';
-  $mailTroy = wp_mail('webmail@hamblin.co.im', 'Posting From Troy', $messageOffice, $officeheaders, array($attachments) );
+  $mailTroy = wp_mail('webmail@hamblin.co.im', 'Posting From Troy', $newapplicationmessage, $officeheaders, array($attachments) );
 
-  //Build the messae to the office for notification
+  //Build the new job notification to the office
   $messageNotification = email_header();
   $messageNotification .= candidate_notification($jobRef, $jobTitle, $name, $lastname, $bday, $telephone, $email);
   $messageNotification .= email_footer();
   $mailOffice = wp_mail($admin_email, 'New Application', $messageNotification, $headers);
-  
+
+  //Built the new user registration message for TROY
+  $newregistrationmessage = troy_candidate_registration($to, $jobTitle, $telephone, $name, $lastname, $bday, $permit, $basedon, $Executive, $Temporary, $Interim, $Permanent, $discipline, $criminal, $quickmessage, $add1, $add2, $add3, $town, $postcode, $datasaved, $jobalerts, $jobRef, $job_id, $noofhours );
+  $officeheaders[] = 'Content-Type: text/plain; charset=UTF-8';
+  $officeheaders[] = 'From: Hamblin Website <no-reply@hamblin.co.im>';
+  $troy_candidate_registration = wp_mail('webmail@hamblin.co.im', 'Posting From Troy', $newregistrationmessage, $officeheaders, array($attachments) );
 
   /**********************************
   IF THE USER IS A NEW USER and they have said we can save their data

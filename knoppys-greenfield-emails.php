@@ -3,7 +3,7 @@
 Plugin Name:       Knoppys Hamblin Emails
 Plugin URI:        https://github.com/knoppys/greenfield-emails
 Description:       This plugin controls the email templates that are sent out to candidates and Hamblin Staff. The emails are branded and responsive. 
-Version:           4.5
+Version:           4.6
 Author:            Knoppys Digital Limited
 License:           GNU General Public License v2
 License URI:       http://www.gnu.org/licenses/gpl-2.0.html
