@@ -146,7 +146,7 @@ function reason_newuser(){ ob_start(); ?>
 							<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
 							<div style="font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;color:#FFFFFF;line-height:120%; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
 								<div style="font-size:12px;line-height:14px;color:#FFFFFF;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-									<p style="margin: 0;font-size: 12px;line-height: 14px;text-align: center"><span style="font-size: 10px; line-height: 12px;"><span style="line-height: 12px; font-size: 10px;">You’re receiving this message because you registered for an account with Hamblin Employment Group. If you did not register for this account please contact us <a href="http://www.greenfield-it.co.uk/contact-us">here</a>&#160;<br></span></span></p>
+									<p style="margin: 0;font-size: 12px;line-height: 14px;text-align: center"><span style="font-size: 10px; line-height: 12px;"><span style="line-height: 12px; font-size: 10px;">You’re receiving this message because you registered for an account with Hamblin Employment Group. If you did not register for this account please contact us <a href="<?php echo get_site_url(); ?>/contact-us">here</a>&#160;<br></span></span></p>
 								</div>
 							</div><!--[if mso]></td></tr></table><![endif]-->
 							<!--[if (!mso)&(!IE)]><!-->
@@ -208,7 +208,7 @@ function reason_jobalert(){ ob_start(); ?>
 							<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;"><![endif]-->
 							<div style="font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;color:#FFFFFF;line-height:120%; padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
 								<div style="font-size:12px;line-height:14px;color:#FFFFFF;font-family:'Roboto', Tahoma, Verdana, Segoe, sans-serif;text-align:left;">
-									<p style="margin: 0;font-size: 12px;line-height: 14px;text-align: center"><span style="font-size: 10px; line-height: 12px;"><span style="line-height: 12px; font-size: 10px;">You’re receiving this message because you registered for job alerts with Hamblin Employment Group. If you did not register for this account please contact us <a href="http://www.greenfield-it.co.uk/contact-us">here</a>&#160;<br></span></span></p>
+									<p style="margin: 0;font-size: 12px;line-height: 14px;text-align: center"><span style="font-size: 10px; line-height: 12px;"><span style="line-height: 12px; font-size: 10px;">You’re receiving this message because you registered for job alerts with Hamblin Employment Group. If you did not register for this account please contact us <a href="<?php echo get_site_url(); ?>/contact-us">here</a>&#160;<br></span></span></p>
 								</div>
 							</div><!--[if mso]></td></tr></table><![endif]-->
 							<!--[if (!mso)&(!IE)]><!-->
