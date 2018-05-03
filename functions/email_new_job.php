@@ -3,7 +3,7 @@
 Get all the subscriber email addresses and send them an email
 to let them know a new job has been posted. 
 We do this buy monitoring the "publish" post status
-*****************************/
+
 
 add_action('transition_post_status', 'send_new_post', 10, 3);
 
@@ -44,3 +44,4 @@ function send_new_post($new_status, $old_status, $post) {
 
 	}
 }
+*****************************/
